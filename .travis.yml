@@ -2,6 +2,7 @@ sudo: required
 services:
   - docker
 before_install:
+  - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   - curl https://sdk.cloud.google.com | bash > /dev/null; # downloads google cloud SDK and installs locally on instance assigned by TravisCI
   - source $HOME/google-cloud-sdk/path.bash.inc # configuration to modify shell thru source command
   - gcloud components update kubectl # installs and updates kubectl inside travis environment (used for configuration and imperative commands)
