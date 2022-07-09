@@ -1,0 +1,14 @@
+# ClusterIP exposes a set of pods to other objects in the cluster (more restrictive networking than NodePort--clusterIP is connected to Deployment with pods), no access from outside world! Ingress Service provide access from outside world.
+# NodePort exposes a set of pods to the outside world (only good for dev purposes!!!)
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: web
+  ports:
+    - port: 3000
+      targetPort: 3000
