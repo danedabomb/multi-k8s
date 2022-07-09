@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project multi-k8s-355820 # check/configure true project name
   - gcloud config set compute/zone us-east1-d # check/configure location
   - gcloud container clusters get-credentials multi-cluster # name of kubernetes cluster, configure to work specifically with this cluster
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin # login to docker using environment variables in Travis dashboard, double checked values
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin # login to docker using environment variables in Travis dashboard
   - docker build -t danedabomb/react-test -f ./client/Dockerfile.dev ./client # dockerfile then build context
 
 script:
