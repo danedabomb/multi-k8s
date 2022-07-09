@@ -17,7 +17,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React 3
+            Fibonacci Calculator - K8s Deployment
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
